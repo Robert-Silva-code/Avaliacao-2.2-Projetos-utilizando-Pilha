@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Histórico de Edição</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-white">
+  <main class="bg-gray-100 p-6 flex flex-col items-center gap-4">
+    <h1 class="text-xl">Histórico de Edição</h1>
+
+    <form id="form-valor" class="flex flex-wrap items-center gap-2">
+      <textarea name="input-valor" id="input-valor" placeholder="Digite algo" rows="5" cols="40" class="border px-2 py-1"></textarea>
+      <button type="submit" class="border px-3 py-1 bg-white">Voltar</button>
+    </form>
+
+    <p id="mensagem" class="text-sm h-5"></p>
+
+  </main>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
