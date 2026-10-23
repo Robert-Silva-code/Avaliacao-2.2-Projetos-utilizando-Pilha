@@ -8,22 +8,22 @@ document.getElementById('form-valor').addEventListener('submit', function (e) {
     const expStack = new LinkedStack()
     let parenteses 
 
-    for ( parenteses in expressao) {
+    for ( parenteses of expressao) {
 
         if (parenteses === "(") {
-            expStack.push("(")
-            console.log("Push" + expStack.peek())
-        }
-        
-        if (expStack.isEmpty()) {
-            console.log(expStack.peek())
-            document.getElementById('mensagem').innerText = `Expressão Inválida`
-        } else {
-            expStack.pop()
+            expStack.push('(')
+        } else if (parenteses === ")") {
+            if (expStack.isEmpty()) {
+                return document.getElementById('mensagem').innerText = `Expressão Inválida`
+            } else {
+                expStack.pop()
+            }
         }
     }
 
     if (expStack.isEmpty()){
         document.getElementById('mensagem').innerText = `Expressão Válida`
-    }    
+    } else {
+        document.getElementById('mensagem').innerText = `Expressão Inválida`
+    }
 })
